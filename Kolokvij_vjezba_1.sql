@@ -38,12 +38,21 @@ create table zena(
 );
 
 create table muskarac(
+	sifra int,	
 	bojaociju varchar(50),
 	hlace varchar(30),
 	modelnaocala varchar(43),
 	maraka decimal (14,6),
 	zena int
 );
+
+create table mladic(
+	sifra int,
+	suknja varchar(50);
+
+);
+
+
 
 
 
