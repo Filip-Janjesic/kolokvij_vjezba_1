@@ -92,6 +92,8 @@ insert into sestra (haljina,maraka,hlace,narukvica) values
 ('plava',115.3234,'crna',2),
 ('crna',2121.1,'crvena',3);
 
+delete from sestra where sifra > 3 ;
+
 select * from zena;
 
 insert into zena (kratkamajica,jmbag,bojaociju,sestra) values
