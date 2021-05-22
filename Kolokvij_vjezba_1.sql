@@ -85,22 +85,26 @@ alter table muskarac add foreign key (zena) references zena (sifra);
 alter table mladic add foreign key (muskarac) references muskarac (sifra);
 alter table cura add foreign key (punac) references punac (sifra);
 
+select * from sestra;
+
+insert into sestra (haljina,maraka,hlace,narukvica) values
+('crna',11111.2222,'plava',1),
+('plava',115.3234,'crna',2),
+('crna',2121.1,'crvena',3);
+
+select * from zena;
+
+insert into zena (kratkamajica,jmbag,bojaociju,sestra) values
+('crna',12345678910,'bijela',1),
+('plava',12345678911,'plava',2),
+('žuta',12345678912,'crna',3);
+
 select * from muskarac;
 
-insert into sestra (haljina ,hlace ,narukvica ) values
-('crna','plava',1),
-('plava','crna',2),
-('crna','crvena',3);
-
-insert into zena (kratkamajica ,jmbag ,bojaociju ,sestra ) values
-('crna',12345678910,'plava',1),
-('crna',12345678911,'plava',2),
-('crna',12345678912,'plava',3);
-
 insert into muskarac (bojaociju, hlace, modelnaocala,maraka,zena) values
-('smeđa','plave','crulle'),
-('zelena','smeđe','ray-ban'),
-('crvene','žute','persol');
+('smeđa','plave','crulle',12345,1),
+('zelena','smeđe','ray-ban',23415,2),
+('crvene','žute','persol',88888,3);
 
 
 
