@@ -5,76 +5,76 @@ use kolokvij_vjezba_1;
 
 create table sestra_svekar( 
 	sifra int not null primary key auto_increment,
-	sestra int,
-	svekar int
+	sestra int not null,
+	svekar int not null
 );
 
 create table svekar( 
 	sifra int not null primary key auto_increment,
-	bojaociju varchar(40),
-	prstena int not null,
-	dukserica varchar(41) not null,
-	lipa decimal (12,7) not null,
-	eura decimal (13,8) not null,
-	majica varchar (35) not null
+	bojaociju varchar(40)not null,
+	prstena int,
+	dukserica varchar(41),
+	lipa decimal (12,7),
+	eura decimal (13,8),
+	majica varchar (35)
 );
 
 create table sestra(
 	sifra int not null primary key auto_increment,
-	introvetno bit not null,
-	haljina varchar(31),
-	maraka decimal (16.6) not null,
-	hlace varchar(46),
-	narukvica int
+	introvetno bit,
+	haljina varchar(31) not null,
+	maraka decimal (16.6),
+	hlace varchar(46) not null,
+	narukvica int not null
 );
 
 create table zena(
 	sifra int not null primary key auto_increment,
-	treciputa datetime not null,
-	hlace varchar(46) not null,
-	kratkamajica varchar(31),
-	jmbag char(11),
-	bojaociju varchar(39),
+	treciputa datetime,
+	hlace varchar(46),
+	kratkamajica varchar(31) not null,
+	jmbag char(11) not null,
+	bojaociju varchar(39) not null,
 	haljina varchar(44),
-	sestra int
+	sestra int not null
 );
 
 create table muskarac(
 	sifra int not null primary key auto_increment,
-	bojaociju varchar(50),
+	bojaociju varchar(50) not null,
 	hlace varchar(30),
 	modelnaocala varchar(43),
-	maraka decimal (14,6),
-	zena int
+	maraka decimal (14,6) not null,
+	zena int not null
 );
 
 create table mladic(
 	sifra int not null primary key auto_increment,
-	suknja varchar(50),
-	kuna decimal(16,8),
-	drugiputa datetime not null,
-	asocijalno bit not null,
+	suknja varchar(50) not null,
+	kuna decimal(16,8) not null,
+	drugiputa datetime,
+	asocijalno bit,
 	ekstroventno bit,
-	dukserica varchar (48),
-	muskarac int not null
+	dukserica varchar (48) not null,
+	muskarac int
 );
 
 create table punac(
 	sifra int not null primary key auto_increment,
-	ogrlica int not null,
-	gustoca decimal (14,9) not null,
-	hlace varchar (41)
+	ogrlica int,
+	gustoca decimal (14,9),
+	hlace varchar (41) not null
 );
 
 create table cura(
 	sifra int not null primary key auto_increment,
-	novcica decimal(16,5),
-	gustoca decimal(18,6),
-	lipa decimal(13,10) not null,
-	ogrlica int,
-	bojakose varchar (38) not null,
-	suknja varchar(36) not null,
-	punac int not null
+	novcica decimal(16,5 )not null,
+	gustoca decimal(18,6) not null,
+	lipa decimal(13,10),
+	ogrlica int not null,
+	bojakose varchar (38),
+	suknja varchar(36),
+	punac int
 );
 
 
