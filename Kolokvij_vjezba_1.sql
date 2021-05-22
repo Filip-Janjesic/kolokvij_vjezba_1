@@ -2,14 +2,15 @@ drop database if exists kolokvij_vjezba_1;
 create database kolokvij_vjezba_1;
 use kolokvij_vjezba_1;
 
+
 create table sestra_svekar( 
-	sifra int,
+	sifra int not null primary key auto_increment,
 	sestra int,
-	scekar int
+	svekar int
 );
 
 create table svekar( 
-	sifra int,
+	sifra int not null primary key auto_increment,
 	bojaociju varchar(40),
 	prstena int not null,
 	dukserica varchar(41) not null,
@@ -19,7 +20,7 @@ create table svekar(
 );
 
 create table sestra(
-	sifra int,
+	sifra int not null primary key auto_increment,
 	introvetno bit not null,
 	haljina varchar(31),
 	maraka decimal (16.6) not null,
@@ -28,6 +29,7 @@ create table sestra(
 );
 
 create table zena(
+	sifra int not null primary key auto_increment,
 	treciputa datetime not null,
 	hlace varchar(46) not null,
 	kratkamajica varchar(31),
@@ -38,7 +40,7 @@ create table zena(
 );
 
 create table muskarac(
-	sifra int,	
+	sifra int not null primary key auto_increment,
 	bojaociju varchar(50),
 	hlace varchar(30),
 	modelnaocala varchar(43),
@@ -47,7 +49,7 @@ create table muskarac(
 );
 
 create table mladic(
-	sifra int,
+	sifra int not null primary key auto_increment,
 	suknja varchar(50),
 	kuna decimal(16,8),
 	drugiputa datetime not null,
@@ -58,14 +60,14 @@ create table mladic(
 );
 
 create table punac(
-	sifra int,
+	sifra int not null primary key auto_increment,
 	ogrlica int not null,
 	gustoca decimal (14,9) not null,
 	hlace varchar (41)
 );
 
 create table cura(
-	sifra int,
+	sifra int not null primary key auto_increment,
 	novcica decimal(16,5),
 	gustoca decimal(18,6),
 	lipa decimal(13,10) not null,
@@ -76,6 +78,7 @@ create table cura(
 );
 
 
+alter table sestra_svekar add foreign key (svekar) references svekar (sifra);
 
 
 
