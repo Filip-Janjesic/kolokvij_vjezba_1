@@ -79,7 +79,7 @@ create table cura(
 
 
 alter table sestra_svekar add foreign key (svekar) references svekar (sifra);
-
+alter table sestra_svekar add foreign key (sestra) references sestra (sifra);
 
 
 
