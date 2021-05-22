@@ -48,10 +48,32 @@ create table muskarac(
 
 create table mladic(
 	sifra int,
-	suknja varchar(50);
-
+	suknja varchar(50),
+	kuna decimal(16,8),
+	drugiputa datetime not null,
+	asocijalno bit not null,
+	ekstroventno bit,
+	dukserica varchar (48),
+	muskarac int not null
 );
 
+create table punac(
+	sifra int,
+	ogrlica int not null,
+	gustoca decimal (14,9) not null,
+	hlace varchar (41)
+);
+
+create table cura(
+	sifra int,
+	novcica decimal(16,5),
+	gustoca decimal(18,6),
+	lipa decimal(13,10) not null,
+	ogrlica int,
+	bojakose varchar (38) not null,
+	suknja varchar(36) not null,
+	punac int not null
+);
 
 
 
