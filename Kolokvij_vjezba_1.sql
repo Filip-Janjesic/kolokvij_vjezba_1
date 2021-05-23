@@ -85,6 +85,8 @@ alter table muskarac add foreign key (zena) references zena (sifra);
 alter table mladic add foreign key (muskarac) references muskarac (sifra);
 alter table cura add foreign key (punac) references punac (sifra);
 
+#1. U tablice muskarac, zena i sestra_svekar unesite po 3 retka.
+
 select * from sestra;
 
 insert into sestra (haljina,maraka,hlace,narukvica) values
@@ -108,6 +110,23 @@ insert into muskarac (bojaociju, hlace, modelnaocala,maraka,zena) values
 ('zelena','smeđe','ray-ban',23415,2),
 ('crvene','žute','persol',88888,3);
 
+#2. U tablici cura postavite svim zapisima kolonu gustoca na vrijednost 15,77.
+
+insert into punac(hlace) values
+('kratke'),('duge'),('prevelike');
+
+insert into cura (novcica,gustoca,ogrlica,punac) values
+(1234,1020,2,1),(1234,1030,2,1),(1234,10120,2,1);
+
+select * from cura; 
+update cura set gustoca = 15.77 where novcica = 1234;
+
+#3. U tablici mladic obrišite sve zapise čija je vrijednost kolone kuna veće od 15,78. (4)
+
+delete from mladic where kuna<15.78;
+
+
+#4. Izlistajte kratkamajica iz tablice zena uz uvjet da vrijednost kolone hlace sadrže slova ana. (6)
 
 
 
