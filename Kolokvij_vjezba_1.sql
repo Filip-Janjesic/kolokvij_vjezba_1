@@ -128,10 +128,21 @@ delete from mladic where kuna<15.78;
 
 #4. Izlistajte kratkamajica iz tablice zena uz uvjet da vrijednost kolone hlace sadrže slova ana. (6)
 
+select kratkamajica from zena where hlace='%ana%';
+
+#5. Prikažite dukserica iz tablice svekar, asocijalno iz tablice mladic te hlace iz tablice muskarac 
+#uz uvjet da su vrijednosti kolone hlace iz tablice zena počinju slovom a
+#te da su vrijednosti kolone haljina iz tablice sestra sadrže niz znakova ba. 
+#Podatke posložite po hlace iz tablice muskarac silazno. (10)
 
 
-
-
-
-
+select f.dukserica, a.asocijalno, b.hlace
+from mladic a 
+inner join muskarac b on a.muskarac = b.sifra
+inner join zena c on b.zena = c.sifra 
+inner join sestra d on c.sestra = d.sifra
+inner join sestra_svekar e on d.sifra = e.sestra 
+inner join svekar f on e.svekar = f.sifra 
+where c.hlace like 'a%' or d.haljina like '%ba%'
+order by b.hlace desc;
 
